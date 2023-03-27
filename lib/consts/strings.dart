@@ -17,3 +17,16 @@ const privacyPolicy = 'Privacy Policy';
 const termsAndConditions = 'Terms And Conditions';
 
 const alreadyAcount = 'Already have an account? ';
+
+const home = "Home",
+    categories = 'Categories',
+    cart = "Cart",
+    account = "Account";
+
+const searchAnything = 'Search Anything...',
+    todayDeal = 'Today\'s deal',
+    flashSale = 'Flash Sale',
+    topSeller = 'Top Seller',
+    brand = 'Brand',
+    topCategories = 'Top Categories',
+    featuredCategories = 'Featured Categories';

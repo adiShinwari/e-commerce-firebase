@@ -64,21 +64,34 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           text: const TextSpan(children: [
                         TextSpan(
                             text: "I agree to the ",
-                            style: TextStyle(color: fontGrey)),
+                            style: TextStyle(
+                              color: fontGrey,
+                              fontFamily: regular,
+                            )),
                         TextSpan(
                             text: termsAndConditions,
-                            style: TextStyle(color: redColor)),
+                            style: TextStyle(
+                              color: redColor,
+                              fontFamily: regular,
+                            )),
                         TextSpan(
-                            text: ' & ', style: TextStyle(color: redColor)),
+                            text: ' & ',
+                            style: TextStyle(
+                              color: redColor,
+                              fontFamily: regular,
+                            )),
                         TextSpan(
                             text: privacyPolicy,
-                            style: TextStyle(color: redColor)),
+                            style: TextStyle(
+                              color: redColor,
+                              fontFamily: regular,
+                            )),
                       ])),
                     )
                   ],
                 ),
                 ourButton(
-                        color: redColor,
+                        color: isCheck == false ? lightGrey : redColor,
                         title: signup,
                         textColor: whiteColor,
                         onPress: () {})
