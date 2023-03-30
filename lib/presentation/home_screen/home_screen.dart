@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/consts/consts.dart';
+import 'package:e_commerce_app/presentation/home_screen/components/featured_button.dart';
 
 import '../../consts/lists.dart';
 import '../../widgets_comman/home_button.dart';
@@ -110,7 +111,7 @@ class HomeScreen extends StatelessWidget {
                               )),
                     ),
                     //Featured Categories,
-                    10.heightBox,
+                    20.heightBox,
                     Align(
                       alignment: Alignment.centerLeft,
                       child: featuredCategories.text
@@ -119,54 +120,149 @@ class HomeScreen extends StatelessWidget {
                           .fontFamily(semibold)
                           .make(),
                     ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: featuredCategories.text
-                          .color(darkFontGrey)
-                          .size(18)
-                          .fontFamily(semibold)
-                          .make(),
+
+                    20.heightBox,
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: List.generate(
+                            3,
+                            (index) => Column(
+                                  children: [
+                                    featuredButton(
+                                        icon: featuredImages1[index],
+                                        title: featuredTitle1[index]),
+                                    10.heightBox,
+                                    featuredButton(
+                                        icon: featuredImages2[index],
+                                        title: featuredTitle2[index]),
+                                  ],
+                                )),
+                      ),
                     ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: featuredCategories.text
-                          .color(darkFontGrey)
-                          .size(18)
-                          .fontFamily(semibold)
-                          .make(),
+                    //Feature Products
+                    20.heightBox,
+                    Container(
+                      padding: const EdgeInsets.all(12),
+                      width: double.infinity,
+                      decoration: const BoxDecoration(
+                        color: redColor,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          featuredProduct.text.white
+                              .fontFamily(bold)
+                              .size(18)
+                              .make(),
+                          10.heightBox,
+                          SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              children: List.generate(
+                                  6,
+                                  (index) => Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Image.asset(
+                                            imgP1,
+                                            width: 150,
+                                            fit: BoxFit.fitWidth,
+                                          ),
+                                          10.heightBox,
+                                          "Laptop 4gb/64gb"
+                                              .text
+                                              .color(darkFontGrey)
+                                              .fontFamily(semibold)
+                                              .make(),
+                                          10.heightBox,
+                                          "\$400"
+                                              .text
+                                              .color(redColor)
+                                              .size(16)
+                                              .fontFamily(bold)
+                                              .make()
+                                        ],
+                                      )
+                                          .box
+                                          .margin(const EdgeInsets.symmetric(
+                                              horizontal: 4))
+                                          .roundedSM
+                                          .padding(const EdgeInsets.all(8))
+                                          .white
+                                          .make()),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: featuredCategories.text
-                          .color(darkFontGrey)
-                          .size(18)
-                          .fontFamily(semibold)
+
+                    //Third Swiper
+
+                    20.heightBox,
+
+                    VxSwiper.builder(
+                        enlargeCenterPage: true,
+                        autoPlay: true,
+                        autoPlayAnimationDuration: const Duration(seconds: 1),
+                        height: 150,
+                        itemCount: secondSliderslidersList.length,
+                        itemBuilder: (ctx, index) => Image.asset(
+                              secondSliderslidersList[index],
+                              fit: BoxFit.fill,
+                            )
+                                .box
+                                .rounded
+                                .margin(
+                                    const EdgeInsets.symmetric(horizontal: 8))
+                                .clip(Clip.antiAlias)
+                                .make()),
+
+                    //ALL products section,
+                    20.heightBox,
+
+                    GridView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      itemCount: 6,
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                              mainAxisExtent: 300,
+                              crossAxisSpacing: 8,
+                              mainAxisSpacing: 8,
+                              crossAxisCount: 2),
+                      itemBuilder: (context, index) => Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            imgP5,
+                            width: 200,
+                            height: 200,
+                            fit: BoxFit.fitWidth,
+                          ),
+                          const Spacer(),
+                          "Laptop 4gb/64gb"
+                              .text
+                              .color(darkFontGrey)
+                              .fontFamily(semibold)
+                              .make(),
+                          10.heightBox,
+                          "\$400"
+                              .text
+                              .color(redColor)
+                              .size(16)
+                              .fontFamily(bold)
+                              .make()
+                        ],
+                      )
+                          .box
+                          .margin(const EdgeInsets.symmetric(horizontal: 4))
+                          .roundedSM
+                          .padding(const EdgeInsets.all(12))
+                          .white
                           .make(),
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: featuredCategories.text
-                          .color(darkFontGrey)
-                          .size(18)
-                          .fontFamily(semibold)
-                          .make(),
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: featuredCategories.text
-                          .color(darkFontGrey)
-                          .size(18)
-                          .fontFamily(semibold)
-                          .make(),
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: featuredCategories.text
-                          .color(darkFontGrey)
-                          .size(18)
-                          .fontFamily(semibold)
-                          .make(),
-                    ),
+                    )
                   ],
                 ),
               ),

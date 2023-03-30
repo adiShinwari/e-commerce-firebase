@@ -29,4 +29,23 @@ const searchAnything = 'Search Anything...',
     topSeller = 'Top Seller',
     brand = 'Brand',
     topCategories = 'Top Categories',
-    featuredCategories = 'Featured Categories';
+    featuredCategories = 'Featured Categories',
+    womenDressing = "Women Dress",
+    mobilePhone = "Mobile Phone",
+    boysGlasses = "Boys Glasses",
+    tShirts = "TShirts",
+    girlsDresses = "Girls Dresses",
+    girlsWatch = "Girls Watches";
+
+const featuredProduct = "Featured Product";
+
+//categories Strings
+const womenClothing = "Women Clothing",
+    menClothingFashion = "Men Clothing & fashion",
+    compAccess = "Computer & Accessories",
+    autoMobile = "Automobile",
+    kidToys = "Kids & Toys",
+    sports = "Sports",
+    jewelery = "Jewelery",
+    cellPhone = "Cellphone & tabs",
+    furniture = "Furniture";
