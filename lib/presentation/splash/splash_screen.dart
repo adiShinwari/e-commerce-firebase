@@ -1,6 +1,6 @@
 import 'package:e_commerce_app/consts/consts.dart';
 import 'package:e_commerce_app/presentation/auth/login_screen.dart';
-import 'package:e_commerce_app/widgets_comman/app_logo_widget.dart';
+import 'package:e_commerce_app/widgets_common/app_logo_widget.dart';
 import 'package:get/route_manager.dart';
 
 class SplashScreen extends StatefulWidget {

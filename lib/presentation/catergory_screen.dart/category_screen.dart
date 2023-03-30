@@ -1,7 +1,7 @@
 import 'package:e_commerce_app/consts/consts.dart';
 import 'package:e_commerce_app/consts/lists.dart';
 import 'package:e_commerce_app/presentation/catergory_screen.dart/category_details.dart';
-import 'package:e_commerce_app/widgets_comman/bg_widget.dart';
+import 'package:e_commerce_app/widgets_common/bg_widget.dart';
 import 'package:get/route_manager.dart';
 
 class CategoryScreen extends StatelessWidget {

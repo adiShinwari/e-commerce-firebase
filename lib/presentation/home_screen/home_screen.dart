@@ -2,7 +2,7 @@ import 'package:e_commerce_app/consts/consts.dart';
 import 'package:e_commerce_app/presentation/home_screen/components/featured_button.dart';
 
 import '../../consts/lists.dart';
-import '../../widgets_comman/home_button.dart';
+import '../../widgets_common/home_button.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

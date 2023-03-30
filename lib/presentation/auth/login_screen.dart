@@ -2,10 +2,10 @@ import 'package:e_commerce_app/consts/consts.dart';
 import 'package:e_commerce_app/consts/lists.dart';
 import 'package:e_commerce_app/presentation/auth/signup_screen.dart';
 import 'package:e_commerce_app/presentation/home_screen/home.dart';
-import 'package:e_commerce_app/widgets_comman/app_logo_widget.dart';
-import 'package:e_commerce_app/widgets_comman/bg_widget.dart';
-import 'package:e_commerce_app/widgets_comman/custom_text_field.dart';
-import 'package:e_commerce_app/widgets_comman/our_button.dart';
+import 'package:e_commerce_app/widgets_common/app_logo_widget.dart';
+import 'package:e_commerce_app/widgets_common/bg_widget.dart';
+import 'package:e_commerce_app/widgets_common/custom_text_field.dart';
+import 'package:e_commerce_app/widgets_common/our_button.dart';
 import 'package:get/route_manager.dart';
 
 class LoginScreen extends StatelessWidget {

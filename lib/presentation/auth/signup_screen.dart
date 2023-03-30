@@ -1,10 +1,10 @@
-import 'package:e_commerce_app/widgets_comman/custom_text_field.dart';
+import 'package:e_commerce_app/widgets_common/custom_text_field.dart';
 import 'package:get/route_manager.dart';
 
 import '../../consts/consts.dart';
-import '../../widgets_comman/app_logo_widget.dart';
-import '../../widgets_comman/bg_widget.dart';
-import '../../widgets_comman/our_button.dart';
+import '../../widgets_common/app_logo_widget.dart';
+import '../../widgets_common/bg_widget.dart';
+import '../../widgets_common/our_button.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
