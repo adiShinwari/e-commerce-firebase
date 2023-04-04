@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         fontFamily: regular,
         appBarTheme: const AppBarTheme(
           iconTheme: IconThemeData(color: darkFontGrey),
-          color: Colors.transparent,
+          color: Colors.white,
         ),
       ),
       home: const SplashScreen(),
