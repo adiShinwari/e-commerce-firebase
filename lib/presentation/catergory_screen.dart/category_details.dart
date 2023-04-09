@@ -1,7 +1,8 @@
 import 'package:e_commerce_app/consts/consts.dart';
+import 'package:e_commerce_app/controller/product_controller.dart';
 import 'package:e_commerce_app/presentation/catergory_screen.dart/items_details.dart';
 import 'package:e_commerce_app/widgets_common/bg_widget.dart';
-import 'package:get/route_manager.dart';
+import 'package:get/get.dart';
 
 class CategoryDetails extends StatelessWidget {
   final String? title;
@@ -10,6 +11,7 @@ class CategoryDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var controller = Get.find<ProductController>();
     return bgWidget(
       Scaffold(
         appBar: AppBar(
@@ -18,18 +20,21 @@ class CategoryDetails extends StatelessWidget {
         body: Container(
           padding: const EdgeInsets.all(12),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SingleChildScrollView(
                 physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: List.generate(
-                      6,
-                      (index) => "Baby clothing"
+                      controller.subCat.length,
+                      (index) => controller.subCat[index]
+                          .toString()
                           .text
                           .fontFamily(semibold)
                           .color(darkFontGrey)
                           .size(15)
+                          .align(TextAlign.center)
                           .makeCentered()
                           .box
                           .size(120, 60)

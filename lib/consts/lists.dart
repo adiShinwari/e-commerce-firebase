@@ -39,14 +39,14 @@ const categoriesList = [
 ];
 
 const categoriesImages = [
+  imgS1,
   imgFc1,
-  imgFc2,
+  imgP1,
   imgFc3,
   imgFc4,
   imgFc5,
+  imgS11,
   imgFc6,
-  imgFc7,
-  imgFc8,
   imgFc9,
 ];
 
@@ -60,4 +60,3 @@ const itemsDetailButton = [
 
 const profileButtonList = [orders, myWishlist, messages];
 const profileButtonIcons = [icOrder, icOrder, icMessages];
-

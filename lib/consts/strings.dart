@@ -15,6 +15,8 @@ const createNewAccount = "or, create a new account";
 const loginWith = "Log in with";
 const privacyPolicy = 'Privacy Policy';
 const termsAndConditions = 'Terms And Conditions';
+const loggedin = "Logged in successfully";
+const loggedout = "Logged out successfully";
 
 const alreadyAcount = 'Already have an account? ';
 
@@ -46,7 +48,7 @@ const womenClothing = "Women Clothing",
     autoMobile = "Automobile",
     kidToys = "Kids & Toys",
     sports = "Sports",
-    jewelery = "Jewelery",
+    jewelery = "Jewellery",
     cellPhone = "Cellphone & tabs",
     furniture = "Furniture";
 
@@ -58,3 +60,4 @@ const video = "Video",
     productsyoumaylike = "Products you may also like";
 
 const myWishlist = "My Wishlist", orders = "My Orders", messages = "Messages";
+const oldPass = "Old Password", newPassword = "New Password";
