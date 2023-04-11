@@ -1,9 +1,10 @@
+import 'package:e_commerce_app/consts/consts.dart';
 import 'package:e_commerce_app/models/category_model.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 class ProductController extends GetxController {
-  var quantity = 1.obs;
+  var quantity = 0.obs;
   var colorIndex = 0.obs;
   var totalPrice = 0.obs;
 
@@ -39,6 +40,26 @@ class ProductController extends GetxController {
 
   calculateTotalPrice(price) {
     totalPrice.value = price * quantity.value;
-    print(totalPrice);
+  }
+
+  Future addToCart(
+      {title, img, price, sellerName, color, qty, tPrice, context}) async {
+    await firestore.collection(cartCollections).doc().set({
+      "title": title,
+      "img": img,
+      "price": price,
+      "sellerName": sellerName,
+      "qty": qty,
+      "tPrice": tPrice,
+      'added_by': currentUser!.uid,
+    }).catchError((error) {
+      VxToast.show(context, msg: error.toString());
+    });
+  }
+
+  resetValue() {
+    totalPrice.value = 0;
+    quantity.value = 0;
+    colorIndex.value = 0;
   }
 }
