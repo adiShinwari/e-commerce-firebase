@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         fontFamily: regular,
         appBarTheme: const AppBarTheme(
           iconTheme: IconThemeData(color: darkFontGrey),
-          color: Colors.white,
+          color: Colors.transparent,
         ),
       ),
       home: const SplashScreen(),
