@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:e_commerce_app/consts/consts.dart';
 import 'package:e_commerce_app/models/category_model.dart';
 import 'package:flutter/services.dart';
@@ -7,6 +8,8 @@ class ProductController extends GetxController {
   var quantity = 0.obs;
   var colorIndex = 0.obs;
   var totalPrice = 0.obs;
+
+  var isFav = false.obs;
 
   var subCat = [];
   getSubCategories(title) async {
@@ -52,6 +55,7 @@ class ProductController extends GetxController {
       "qty": qty,
       "tPrice": tPrice,
       'added_by': currentUser!.uid,
+      "color": color,
     }).catchError((error) {
       VxToast.show(context, msg: error.toString());
     });
@@ -61,5 +65,30 @@ class ProductController extends GetxController {
     totalPrice.value = 0;
     quantity.value = 0;
     colorIndex.value = 0;
+  }
+
+  addToWishList(docid, context) async {
+    await firestore.collection(productsCollections).doc(docid).set({
+      'p_wishlist': FieldValue.arrayUnion([currentUser!.uid])
+    }, SetOptions(merge: true));
+    isFav(true);
+
+    VxToast.show(context, msg: "Added to wishlist");
+  }
+
+  removeFromWishList(docid, context) async {
+    await firestore.collection(productsCollections).doc(docid).set({
+      'p_wishlist': FieldValue.arrayRemove([currentUser!.uid])
+    }, SetOptions(merge: true));
+    isFav(false);
+    VxToast.show(context, msg: "Removed from wishlist");
+  }
+
+  checkIfFav(data) async {
+    if (data['p_wishlist'].contains(currentUser!.uid)) {
+      isFav(true);
+    } else {
+      isFav(false);
+    }
   }
 }

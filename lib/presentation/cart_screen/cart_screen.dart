@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:e_commerce_app/consts/consts.dart';
 import 'package:e_commerce_app/controller/cart_controller.dart';
 import 'package:e_commerce_app/controller/services/firestore_services.dart';
+import 'package:e_commerce_app/presentation/cart_screen/shipping_screen.dart';
 import 'package:get/get.dart';
 
 import '../../widgets_common/our_button.dart';
@@ -13,6 +14,18 @@ class CartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var controller = Get.put(CartController());
     return Scaffold(
+        bottomNavigationBar: SizedBox(
+          width: context.screenWidth - 60,
+          height: 60,
+          child: ourButton(
+            color: redColor,
+            onPress: () {
+              Get.to(const ShippingDetails());
+            },
+            textColor: whiteColor,
+            title: "Proceed to shipping",
+          ),
+        ),
         backgroundColor: whiteColor,
         appBar: AppBar(
           title: "Shopping Cart"
@@ -36,6 +49,7 @@ class CartScreen extends StatelessWidget {
             } else {
               var data = snapshot.data!.docs;
               controller.calculateTPriceCart(data: data);
+              controller.productSnapshot = data;
               return Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
@@ -96,14 +110,6 @@ class CartScreen extends StatelessWidget {
                         .roundedSM
                         .make(),
                     10.heightBox,
-                    SizedBox(
-                        width: context.screenWidth - 60,
-                        child: ourButton(
-                          color: redColor,
-                          onPress: () {},
-                          textColor: whiteColor,
-                          title: "Proceed to shipping",
-                        ))
                   ],
                 ),
               );

@@ -28,4 +28,13 @@ class FireStoreServices {
   static deleteDocument(docId) async {
     return await firestore.collection(cartCollections).doc(docId).delete();
   }
+
+  static getChatMessages(docID) {
+    return firestore
+        .collection(chatsCollection)
+        .doc(docID)
+        .collection(messagesCollection)
+        .orderBy('created_on', descending: false)
+        .snapshots();
+  }
 }

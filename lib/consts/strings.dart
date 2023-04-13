@@ -61,3 +61,5 @@ const video = "Video",
 
 const myWishlist = "My Wishlist", orders = "My Orders", messages = "Messages";
 const oldPass = "Old Password", newPassword = "New Password";
+
+const paypal = "Paypal", stripe = "Stripe", cod = "Cash on delivery";
